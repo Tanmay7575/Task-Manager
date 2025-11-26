@@ -26,17 +26,17 @@ const TaskList =()=> {
   return (
     <div className="mt-6">
    
-      <div className="flex gap-4 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-3">
 
         <input
-          className="p-2 bg-gray-800 text-white rounded border"
+          className="p-2 bg-gray-800 text-white rounded border lg:w-80"
           placeholder="Search tasks..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
 
         <select
-          className="p-2 bg-gray-800 text-white rounded border"
+          className="p-2 bg-gray-800 text-white rounded border lg:w-80"
           value={priority}
           onChange={(e) => setPriority(e.target.value)}
         >
@@ -47,7 +47,7 @@ const TaskList =()=> {
         </select>
 
         <select
-          className="p-2 bg-gray-800 text-white rounded border"
+          className="p-2 bg-gray-800 text-white rounded border lg:w-80"
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
         >
@@ -56,7 +56,7 @@ const TaskList =()=> {
         </select>
 
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 m-2">
         {filtered.map((task) => (
           <TaskCard key={task.id} task={task} />
         ))}
